@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Shhhh</title>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-functions.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-storage.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../asset/css/particlejs.css" rel="stylesheet"/>
+
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="content-wrapper">
+    <div class="text-white text-center pt-5" style="height: 150px;">
+        <p>Hello, <span class="user-name"></span> ! </p>
+        <button class="btn btn-success" onclick="howToUse()">How to use</button>
+        <button class="btn btn-info" onclick="recycle()">Recycle Bin</button>
+    </div>
+    <div class="w-75 mx-auto" id="alert-holder"></div>
+    <div class="row p-0 mt-3 mx-0">
+        <div class="col-lg-8">
+            <table class="table table-bordered table-light table-striped" id="resultTable">
+                <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Submit By</th>
+                    <th>Modified on</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="resultBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <label class="text-white" for="questionInput">Question</label>
+                <input class="form-control" id="questionInput" name="questionInput" placeholder="Question" type="text">
+                <input hidden id="questionInput-img" name="questionInput-img" type="text" value="">
+                <small class="text-white" id="question-info"></small>
+            </div>
+            <div>
+                <label class="text-white" for="answerInput">Answer</label>
+                <input class="form-control" id="answerInput" name="answerInput" onkeydown="checkIfIsEnter(event)"
+                       placeholder="Answer"
+                       type="text">
+                <input hidden id="answerInput-img" name="answerInput-img" type="text" value="">
+                <small class="text-white" id="answer-info"></small>
+            </div>
+            <br>
+            <button class="btn btn-success" onclick="submit()"> Submit</button>
+        </div>
+    </div>
+</div>
+
+<script defer src="../asset/js/fb.js"></script>
+<script defer src="../asset/js/particle.js"></script>
+<script defer src="../asset/js/modal.js"></script>
+<script defer src="app.js"></script>
+</body>
+
+</html>
